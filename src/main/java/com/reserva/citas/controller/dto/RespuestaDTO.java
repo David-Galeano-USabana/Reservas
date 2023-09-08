@@ -1,4 +1,12 @@
 package com.reserva.citas.controller.dto;
 
-public class RespuestaDTO {
+import lombok.Data;
+
+public @Data class RespuestaDTO {
+    String mensaje;
+
+    public RespuestaDTO(String mensaje) {
+        this.mensaje = mensaje;
+    }
+    public RespuestaDTO(){}
 }

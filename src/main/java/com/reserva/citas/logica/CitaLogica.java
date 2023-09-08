@@ -12,8 +12,10 @@ public class CitaLogica {
     }
 
     public void crearCita(CitaDTO citaDTO){
-
         Cita cita = new Cita();
+        cita.setIdCita(citaDTO.getIdCita()); //A utilizar un código automatico
+        cita.setFechaReserva(citaDTO.getFechaReserva());
+        cita.setCliente(citaDTO.getCliente());
         citaRepository.save(cita);
     }
 }

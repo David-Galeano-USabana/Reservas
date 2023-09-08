@@ -16,7 +16,7 @@ public @Data class Cita {
     @Id
     private int idCita;
     @Column
-    private Time fecha;
+    private Time fechaReserva;
 
     @Column
     private String empresa;
