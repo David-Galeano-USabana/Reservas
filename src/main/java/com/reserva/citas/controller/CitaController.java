@@ -6,7 +6,6 @@ import com.reserva.citas.logica.CitaLogica;
 import com.reserva.citas.persistencia.Cita;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -21,12 +20,18 @@ public class CitaController {
     public RespuestaDTO subirCita(@RequestBody CitaDTO citaDTO) {
 
         citaLogica.crearCita(citaDTO);
-        return new RespuestaDTO("Cita creada exitosamente. Tu ID de cita es: "+ citaDTO.getIdCita());
-    }
-    @GetMapping(path = "/citas")
-    public List<Cita> buscarCitas(){
-        return citaLogica.obtenerReservas();
+        return new RespuestaDTO("Cita creada exitosamente. Tu ID de cita es: " + citaDTO.getIdCita());
     }
 
+    @GetMapping(path = "/citas/{idCita}")
+    public Optional<Cita> buscarCitas(@PathVariable int idCita) {
+        return citaLogica.obtenerReserva(idCita);
+    }
+
+    @DeleteMapping(path = "/citas/cancelar/{idCita}")
+    public RespuestaDTO borrarCita(@PathVariable int idCita) {
+        citaLogica.cancelarCitaPorId(idCita);
+        return new RespuestaDTO("Cita cancelada correctamente");
+    }
 
 }

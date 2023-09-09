@@ -5,7 +5,7 @@ import com.reserva.citas.persistencia.Cita;
 import com.reserva.citas.persistencia.CitaRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.time.LocalTime;
 import java.util.Optional;
 
 @Service
@@ -17,14 +17,19 @@ public class CitaLogica {
         this.citaRepository = citaRepository;
     }
 
-    public void crearCita(CitaDTO citaDTO){
+    public void crearCita(CitaDTO citaDTO) {
         Cita cita = new Cita();
         cita.setIdCita(citaDTO.getIdCita()); //A utilizar un código automatico
-        cita.setFechaReserva(citaDTO.getFechaReserva());
+        cita.setFechaReserva(LocalTime.parse(citaDTO.getFechaReserva()));
         cita.setCliente(citaDTO.getCliente());
+        cita.setIdEmpresa(citaDTO.getIdEmpresa());
         citaRepository.save(cita);
     }
-    public List<Cita> obtenerReservas(){
-        return citaRepository.findAll();
+
+    public Optional<Cita> obtenerReserva(int id) {
+        return citaRepository.findById(id);
+    }
+    public void cancelarCitaPorId(int id){
+        citaRepository.deleteById(id);
     }
 }
