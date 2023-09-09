@@ -26,6 +26,9 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok:1.18.28'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 
+	// https://mavenlibs.com/maven/dependency/mysql/mysql-connector-java
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.32'
+
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.7.15'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.7.15'
 
