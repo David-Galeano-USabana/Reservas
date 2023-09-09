@@ -3,8 +3,14 @@ package com.reserva.citas.logica;
 import com.reserva.citas.controller.dto.CitaDTO;
 import com.reserva.citas.persistencia.Cita;
 import com.reserva.citas.persistencia.CitaRepository;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
+@Service
 public class CitaLogica {
+
     private CitaRepository citaRepository;
 
     public CitaLogica(CitaRepository citaRepository) {
@@ -17,5 +23,8 @@ public class CitaLogica {
         cita.setFechaReserva(citaDTO.getFechaReserva());
         cita.setCliente(citaDTO.getCliente());
         citaRepository.save(cita);
+    }
+    public List<Cita> obtenerReservas(){
+        return citaRepository.findAll();
     }
 }

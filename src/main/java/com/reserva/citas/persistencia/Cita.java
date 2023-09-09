@@ -14,6 +14,7 @@ import java.sql.Time;
 public @Data class Cita {
 
     @Id
+    @Column(name = "idCita")
     private int idCita;
     @Column
     private Time fechaReserva;
@@ -21,7 +22,7 @@ public @Data class Cita {
     @Column
     private String empresa;
 
-    @Column
+    @Column(name = "cliente")
     private String cliente;
 
 
