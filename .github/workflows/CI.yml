@@ -1,11 +1,11 @@
 name: Continuous Integrations
 on:
-    pull_request:
-      branches: ["main"]
+  pull_request:
+    branches: ["main"]
 permissions:
-    contents: read
+  contents: read
 jobs:
-  build:  
+  build:
     runs-on: ubuntu-latest
 
     steps:
