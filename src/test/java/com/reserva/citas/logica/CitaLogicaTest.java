@@ -9,6 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.sql.Time;
 import java.util.Optional;
@@ -16,6 +17,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
+@ActiveProfiles(profiles = "test")
 class CitaLogicaTest {
 
     @InjectMocks
@@ -28,7 +30,7 @@ class CitaLogicaTest {
         int id = 5;
         CitaDTO citaDTO = new CitaDTO();
         citaDTO.setIdCita(id);
-        citaDTO.setCliente("John World");
+        citaDTO.setCliente("John Ramon Pikmin Rise III");
         citaDTO.setFechaReserva("10:00:00");
         citaDTO.setIdEmpresa(3);
         Cita cita = citaLogica.crearCita(citaDTO);

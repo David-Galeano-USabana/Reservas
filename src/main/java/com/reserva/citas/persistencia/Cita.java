@@ -2,6 +2,7 @@ package com.reserva.citas.persistencia;
 
 import lombok.Data;
 
+import javax.lang.model.element.Name;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,7 +11,7 @@ import java.sql.Time;
 
 
 @Entity
-@Table
+@Table(name = "Citas")
 public @Data class Cita {
 
     @Id
