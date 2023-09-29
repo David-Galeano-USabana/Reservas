@@ -9,12 +9,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public @Data class Empresa {
+public @Data
+class Empresa {
 
     @Id
-    @Column
+    @Column(name = "idempresa")
     private int idEmpresa;
-    @Column
+    @Column(name = "nombre")
     private String nombre;
 
 }

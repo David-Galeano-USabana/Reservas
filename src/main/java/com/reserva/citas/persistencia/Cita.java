@@ -14,13 +14,13 @@ import java.sql.Time;
 public @Data class Cita {
 
     @Id
-    @Column(name = "idCita")
+    @Column(name = "idcita")
     private int idCita;
-    @Column
+    @Column(name = "fechareserva")
     private Time fechaReserva;
 
-    @Column
-    private String empresa;
+    @Column(name = "idempresa")
+    private int idEmpresa;
 
     @Column(name = "cliente")
     private String cliente;
