@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.time.LocalTime;
+import java.sql.Time;
 
 
 @Entity
@@ -17,7 +17,7 @@ public @Data class Cita {
     @Column(name = "idcita")
     private int idCita;
     @Column(name = "fechareserva")
-    private LocalTime fechaReserva;
+    private Time fechaReserva;
 
     @Column(name = "idempresa")
     private int idEmpresa;

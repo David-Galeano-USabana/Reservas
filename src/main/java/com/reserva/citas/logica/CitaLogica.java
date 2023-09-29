@@ -6,8 +6,8 @@ import com.reserva.citas.persistencia.CitaRepository;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
+
+import java.sql.Time;
 import java.util.Optional;
 
 @Service
@@ -26,7 +26,8 @@ public class CitaLogica {
         }
         Cita cita = new Cita();
         cita.setIdCita(citaDTO.getIdCita());
-        cita.setFechaReserva(LocalTime.parse(citaDTO.getFechaReserva()));
+        //cita.setFechaReserva(LocalTime.parse(citaDTO.getFechaReserva()));
+        cita.setFechaReserva(Time.valueOf(citaDTO.getFechaReserva()));
         cita.setCliente(citaDTO.getCliente());
         cita.setIdEmpresa(citaDTO.getIdEmpresa());
         citaRepository.save(cita);
@@ -42,7 +43,7 @@ public class CitaLogica {
 
     private boolean fechaOcupada(CitaDTO citaDTO) {
         Cita cita = new Cita();
-        cita.setFechaReserva(LocalTime.parse(citaDTO.getFechaReserva()));
+        cita.setFechaReserva(Time.valueOf(citaDTO.getFechaReserva()));
         Example<Cita> example = Example.of(cita);
         Optional<Cita> match = citaRepository.findOne(example);
         return match.isPresent();
@@ -50,7 +51,7 @@ public class CitaLogica {
 
     public boolean disponibilidad(String fecha) {
         Cita cita = new Cita();
-        cita.setFechaReserva(LocalTime.parse(fecha));
+        cita.setFechaReserva(Time.valueOf(fecha));
         Example<Cita> example = Example.of(cita);
         Optional<Cita> match = citaRepository.findOne(example);
         return match.isPresent();
