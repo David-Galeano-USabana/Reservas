@@ -16,6 +16,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - name: Run chmod to make gradlew executable
+        run: chmod +x ./gradlew
       - name: Complicacion :D (compilacion)
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
