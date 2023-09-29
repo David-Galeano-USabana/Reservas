@@ -23,9 +23,18 @@ public class CitaController {
         return new RespuestaDTO("Cita creada exitosamente. Tu ID de cita es: " + citaDTO.getIdCita());
     }
 
-    @GetMapping(path = "/citas/{idCita}")
+    @GetMapping(path = "/citas/obtenerCita/{idCita}")
     public Optional<Cita> buscarCitas(@PathVariable int idCita) {
-        return citaLogica.obtenerReserva(idCita);
+        return citaLogica.obtenerReservaPorId(idCita);
+    }
+
+    @GetMapping(path = "/citas/disponibilidad/{fechaCita}")
+    public RespuestaDTO verificarDisponibilidad(@PathVariable String fechaCita) {
+        if (citaLogica.disponibilidad(fechaCita)) {
+            return new RespuestaDTO("No hay disponibilidad para esta fecha");
+        } else {
+            return new RespuestaDTO("Esta fecha está disponible");
+        }
     }
 
     @DeleteMapping(path = "/citas/cancelar/{idCita}")
