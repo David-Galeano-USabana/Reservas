@@ -1,4 +1,3 @@
-name: Continuous Integrations
 on:
   pull_request:
     branches: ["main"]
