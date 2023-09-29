@@ -19,7 +19,7 @@ public class CitaLogica {
         this.citaRepository = citaRepository;
     }
 
-    public void crearCita(CitaDTO citaDTO) {
+    public Cita crearCita(CitaDTO citaDTO) {
 
         if (fechaOcupada(citaDTO)) {
            throw new IllegalArgumentException("No es posible tener dos citas en la misma fecha");
@@ -31,6 +31,7 @@ public class CitaLogica {
         cita.setCliente(citaDTO.getCliente());
         cita.setIdEmpresa(citaDTO.getIdEmpresa());
         citaRepository.save(cita);
+        return cita;
     }
 
     public Optional<Cita> obtenerReservaPorId(int id) {
