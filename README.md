@@ -15,6 +15,8 @@ Propósito: Ofrecer reservas y citas para empresas que prestan servicios, como s
 
 5. Modificación de citas: Brinda a los usuarios la posibilidad de cambiar la fecha o la hora de una cita existente en caso de ser necesario.
 
+JaCoCo: El JaCoCo fue configurado y se puede ver el porcentaje en \build\jacocoHtml\com.reserva.citas.logica\CitaLogica.html, debido a un error con el versionamiento 9.0 de Gradle no pudimos graficarlo en el actions de Github.
+
 ## DIAGRAMAS
 ### Componentes
 
