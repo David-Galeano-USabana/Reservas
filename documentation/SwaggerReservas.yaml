@@ -1,0 +1,264 @@
+openapi: 3.0.3
+info:
+  version: "1.0.1"
+  title: Reservas empresariales
+  description: |-
+    - Un aplicativo que permite generar reservas con diferentes empresas que dispongan de diferentes servicios, con la revisión de horarios para evitar problemas de tiempos cruzados.
+    - An aplication which allows to generate reservations qith different companies, whom offer different services, with the ability to check reserve times to avoid overlapping.
+
+    _Esta es nada más una simulación, no es un aplicativo con la capacidad real de base de datos o funcionalidad empresarial_
+    
+    _This is a simulation of the real app, it is not currently capable of running realtime database connectivity or enterprise funtionality_
+    
+    Agradecimientos especiales:
+    - Profesor Daniel Orlando Saavedra Fonnegra
+    - El repositorio de Maven/Gradle por hacernos la vida más fácil
+    
+tags:
+  - name: Citas
+    description: la lógica detrás de la creacion y manejo de las reservas/citas
+paths:
+ /citas/logica :
+    post:
+      tags:
+        - Citas
+      summary: Crear una nueva cita
+      description: creación de cita empresarial
+      operationId: crearCita
+      requestBody:
+        description: Crea una nueva cita en la base de datos
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cita'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Cita'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Cita'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cita'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Cita'
+        '404':
+          description: Base de datos no encontrada
+        '405':
+          description: Datos insertados no validos
+      security:
+        - petstore_auth:
+            - write:pets
+            - read:pets
+  
+  /citas/logica:
+    get:
+      tags:
+        - Citas
+      summary: Buscar cita por id
+      description: Retorna una sola cita
+      operationId: obtenerReservaPorId
+      parameters:
+        - name: idCita
+          in: /citas/logica
+          description: ID de la cita retornada
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cita'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Cita'
+        '400':
+          description: ID invalida insertada
+        '404':
+          description: Cita no encontrada
+          
+      security:
+        - api_key: []
+        - petstore_auth:
+            - write:pets
+            - read:pets
+    get:
+      tags:
+        - Citas
+      summary: Recibe la fecha de cita con su ocupación
+      description: ''
+      operationId: fechaOcupada
+      parameters:
+        - name: idCita
+          in: /citas/logica
+          description: ID de la cita a conseguir
+          required: true
+          schema:
+            type: integer
+            format: int64
+       responses:
+        '200':
+          description: Successful operation
+           content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cita'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Cita'
+          description: Fecha obtenida
+        '404':
+          description: Base de datos no encontrada
+        '405':
+          description: Datos insertados no validos         
+      security:
+        - petstore_auth:
+            - write:pets
+            - read:pets
+    put:
+      tags:
+        - Citas
+      summary: remueve logicamente una cita
+      description: remueve una cita
+      operationId: cancelarCiataPorId
+      parameters:
+        - name: setEstado
+          in: header
+          description: ''
+          required: false
+          schema:
+            type: string
+        - name: estado
+          in: /citas/logica
+          description: estado a cambiar
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: Valor de idCita invalido
+      security:
+        - petstore_auth:
+            - write:pets
+            - read:pets
+    get:
+      tags:
+        - Citas
+      summary: Recibe la disponibilidad en una hora establecida
+      description: ''
+      operationId: disponibilidad
+      parameters:
+        - name: fechaReserva
+          in: /citas/logica
+          description: Fecha de la reserva a revisar
+          required: true
+          schema:
+            type: integer
+            format: int64
+       responses:
+        '200':
+          description: Si hay citas disponibles
+        '404':
+          description: Base de datos no encontrada
+        '409':
+          description: La fecha ingresada ya tiene reserva    
+      security:
+        - petstore_auth:
+            - write:pets
+            - read:pets            
+components:
+  schemas:
+    Cita:
+      required:
+        - idCita
+        - cliente
+        - idEmpresa
+        - fechaReserva
+        - estado
+      type: object
+      properties:
+        idCita:
+          type: integer
+          format: int64
+          example: 10
+        cliente:
+          type: string
+          example: Juan XIV
+        fechaReserva:
+          type: time
+          example: 12:54:02
+        idEmpresa:
+          type: int
+          format: int64
+          example: 3
+        estado:
+          type: boolean
+          description: estado de la cita activo/inactivo
+          enum:
+            - "1"
+            - "0"
+   Empresa:
+      required:
+        - idEmpresa
+        - nombre
+      type: object
+      properties:
+        idEmpresa:
+          type: integer
+          format: int64
+          example: 10
+        nombre:
+          type: string
+          example: GMF
+          
+   Reserva:
+      required:
+        - idReserva
+        - servicio
+      type: object
+      properties:
+        idReserva:
+          type: integer
+          format: int64
+          example: 10
+        servicio:
+          type: string
+          example: Apoyo financiero
+          
+   ApiRespuesta:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+      xml:
+        name: '##default'
+
+  securitySchemes:
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://petstore3.swagger.io/oauth/authorize
+          scopes:
+            write:pets: modify pets in your account
+            read:pets: read your pets
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
