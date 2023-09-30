@@ -1,4 +1,4 @@
-# Reservas
+# Reservas:
 ### David Galeano Méndez
 ### Sebastian David Rodriguez
 ### Jose Luis Tovar
@@ -14,5 +14,4 @@
 
 ### Modelo de datos
 
-![Package Diagram drawio(1)](https://github.com/David-Galeano-USabana/Reservas/assets/141966320/e6650209-c174-449a-93bc-112c16364f4e)
-
+![Diagrama sin título](https://github.com/David-Galeano-USabana/Reservas/assets/88167644/31bf5c67-5c07-4923-ae04-a0e7bb6ada10)
