@@ -22,14 +22,14 @@ public class CitaLogica {
     public Cita crearCita(CitaDTO citaDTO) {
 
         if (fechaOcupada(citaDTO)) {
-           throw new IllegalArgumentException("No es posible tener dos citas en la misma fecha");
+            throw new IllegalArgumentException("No es posible tener dos citas en la misma fecha");
         }
         Cita cita = new Cita();
         cita.setIdCita(citaDTO.getIdCita());
-        //cita.setFechaReserva(LocalTime.parse(citaDTO.getFechaReserva()));
         cita.setFechaReserva(Time.valueOf(citaDTO.getFechaReserva()));
         cita.setCliente(citaDTO.getCliente());
         cita.setIdEmpresa(citaDTO.getIdEmpresa());
+        cita.setEstado(true);
         citaRepository.save(cita);
         return cita;
     }
@@ -39,12 +39,16 @@ public class CitaLogica {
     }
 
     public void cancelarCitaPorId(int id) {
-        citaRepository.deleteById(id);
+        Optional<Cita> cita = citaRepository.findById(id);
+        Cita mod = cita.get();
+        mod.setEstado(false);
+        citaRepository.save(mod);
     }
 
     private boolean fechaOcupada(CitaDTO citaDTO) {
         Cita cita = new Cita();
         cita.setFechaReserva(Time.valueOf(citaDTO.getFechaReserva()));
+        cita.setEstado(true);
         Example<Cita> example = Example.of(cita);
         Optional<Cita> match = citaRepository.findOne(example);
         return match.isPresent();

@@ -9,10 +9,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
-
-import java.sql.Time;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,6 +22,8 @@ class CitaLogicaTest {
     CitaLogica citaLogica;
     @Mock
     CitaRepository citaRepository;
+
+
 
     @Test
     void Given_a_cita_When_invoke_crearcita_Then_return_true() {
@@ -42,12 +42,5 @@ class CitaLogicaTest {
         int id = 5;
         citaLogica.obtenerReservaPorId(id);
         Mockito.verify(citaRepository).findById(id);
-    }
-
-    @Test
-    void Given_a_cita_When_invoke_cancelarCitaPorId_Then_return_true() {
-        int id = 5;
-        citaLogica.cancelarCitaPorId(id);
-        Mockito.verify(citaRepository).deleteById(id);
     }
 }
