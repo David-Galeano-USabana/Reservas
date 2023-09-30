@@ -22,6 +22,7 @@ class CitaLogicaTest {
     @Mock
     CitaRepository citaRepository;
 
+
     @Test
     void Given_a_cita_When_invoke_crearcita_Then_return_true() {
         int id = 5;
@@ -44,7 +45,14 @@ class CitaLogicaTest {
     @Test
     void Given_a_cita_When_invoke_cancelarCitaPorId_Then_return_true() {
         int id = 5;
+        CitaDTO citaDTO = new CitaDTO();
+        citaDTO.setIdCita(id);
+        citaDTO.setCliente("John Ramon Pikmin Rise III");
+        citaDTO.setFechaReserva("10:00:00");
+        citaDTO.setIdEmpresa(3);
+        Cita cita = citaLogica.crearCita(citaDTO);
+        cita.setEstado(false);
         citaLogica.cancelarCitaPorId(id);
-        Mockito.verify(citaRepository).deleteById(id);
+        Mockito.verify(citaRepository).findById(id);
     }
 }
