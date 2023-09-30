@@ -1,7 +1,19 @@
 # Reservas:
-### David Galeano Méndez
-### Sebastian David Rodriguez
-### Jose Luis Tovar
+### David Galeano Méndez: Developer
+### Sebastian David Rodriguez: Developer
+### Jose Luis Tovar: Developer
+
+Propósito: Ofrecer reservas y citas para empresas que prestan servicios, como salones de belleza, restaurantes o centros médicos, esta API brinda las siguientes funcionalidades:
+
+1. Configuración de la ventana de tiempo durante la cual se pueden realizar reservas.
+
+2. Verificación de disponibilidad: Permite a los usuarios comprobar si hay citas disponibles según la fecha y el horario deseados.
+
+3. Programación de citas: Facilita a los usuarios la programación de citas al elegir el servicio, el profesional y el horario disponible.
+
+4. Cancelación de citas: Permite a los usuarios cancelar citas existentes y liberar esos horarios para otros clientes.
+
+5. Modificación de citas: Brinda a los usuarios la posibilidad de cambiar la fecha o la hora de una cita existente en caso de ser necesario.
 
 ## DIAGRAMAS
 ### Componentes
