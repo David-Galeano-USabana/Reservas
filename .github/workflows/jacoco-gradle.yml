@@ -1,0 +1,33 @@
+name: Jacoco
+
+on:
+  push:
+    branches: [ "main" ]
+  pull request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  jacoco-java-gradle:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin' # See 'Supported distributions' for available options
+        java-version: '17'
+    - run: java HelloWorldApp.java
+
+    - name: Grant execute permission for gradlew
+    run: chmod +x gradlew
+    -name: Run Test Coverage
+    run: ./gradlew jacocoTestReport
+    -name: Generate JaCoCo Badge
+    uses: cicirello/jacoco-badge-generator@v2
+    with:
+      generate-branches-badge: true
+      jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
