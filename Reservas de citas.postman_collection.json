@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "e3679753-50f7-4673-852d-bc6c43b9a01f",
+		"name": "Reservas de citas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29623713"
+	},
+	"item": [
+		{
+			"name": "Crear Cita",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCita\": 3,\r\n    \"cliente\": \"xXx_nutButter69_xXx\",\r\n    \"fechaReserva\": \"06:09:00\",\r\n    \"idEmpresa\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/citas/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"citas",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener cita",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/citas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"citas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancelar Cita",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/citas/cancelar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"citas",
+						"cancelar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
