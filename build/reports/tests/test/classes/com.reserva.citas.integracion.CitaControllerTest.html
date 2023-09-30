@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - CitaControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>CitaControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.reserva.citas.integracion.html">com.reserva.citas.integracion</a> &gt; CitaControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.805s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Dado_id_Cuando_cancelar_Entonces_estado_falso()</td>
+<td class="success">0.462s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Dado_un_id_Cuando_invoca_obtenercita_Entonces_retorna_una_cita()</td>
+<td class="success">0.037s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Dado_una_citadto_Cuando_invoque_crearcita_Entonces_retorna_respuestadto()</td>
+<td class="success">0.306s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2023-09-30 00:21:54.981  INFO 24880 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.reserva.citas.integracion.CitaControllerTest], using SpringBootContextLoader
+2023-09-30 00:21:54.981  INFO 24880 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.reserva.citas.integracion.CitaControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-09-30 00:21:54.981  INFO 24880 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.reserva.citas.integracion.CitaControllerTest]: CitaControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-09-30 00:21:54.988  INFO 24880 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.reserva.citas.CitasApplication for test class com.reserva.citas.integracion.CitaControllerTest
+2023-09-30 00:21:54.989  INFO 24880 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2023-09-30 00:21:54.989  INFO 24880 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6fd46b61, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@28aee12e, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5d368436, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@15273ae8, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5964c44e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@69cf9dd, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6fe2da0c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@43be5d62, org.springframework.test.context.event.EventPublishingTestExecutionListener@3c87b7ef, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5d34e3b3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@247f60a3, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@151b7c03, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@14a28980, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6e71c9dc, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@31d4c6c9]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.15)
+
+2023-09-30 00:21:55.031  INFO 24880 --- [    Test worker] c.r.c.integracion.CitaControllerTest     : Starting CitaControllerTest using Java 17.0.1 on CPU-de-Sebas with PID 24880 (started by User in C:\Users\User\Downloads\Reservas)
+2023-09-30 00:21:55.031  INFO 24880 --- [    Test worker] c.r.c.integracion.CitaControllerTest     : The following 1 profile is active: &quot;test&quot;
+2023-09-30 00:21:55.185  INFO 24880 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-30 00:21:55.198  INFO 24880 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 3 JPA repository interfaces.
+2023-09-30 00:21:55.519  INFO 24880 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-09-30 00:21:55.536  INFO 24880 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-30 00:21:55.536  INFO 24880 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-09-30 00:21:55.692  INFO 24880 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-30 00:21:55.692  INFO 24880 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 659 ms
+2023-09-30 00:21:55.886  INFO 24880 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-30 00:21:55.893  INFO 24880 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-09-30 00:21:55.894  INFO 24880 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-09-30 00:21:55.895  INFO 24880 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-09-30 00:21:55.945  INFO 24880 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-30 00:21:55.945  INFO 24880 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-30 00:21:56.053  WARN 24880 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-30 00:21:56.483  INFO 24880 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 50321 (http) with context path ''
+2023-09-30 00:21:56.487  INFO 24880 --- [    Test worker] c.r.c.integracion.CitaControllerTest     : Started CitaControllerTest in 1.495 seconds (JVM running for 8.63)
+2023-09-30 00:21:56.854  INFO 24880 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-30 00:21:56.854  INFO 24880 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-30 00:21:56.855  INFO 24880 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-30 00:21:57.276  INFO 24880 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@130419 testClass = CitaControllerTest, testInstance = com.reserva.citas.integracion.CitaControllerTest@5d9ca030, testMethod = Dado_un_id_Cuando_invoca_obtenercita_Entonces_retorna_una_cita@CitaControllerTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@694fdebe testClass = CitaControllerTest, locations = '{}', classes = '{class com.reserva.citas.CitasApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@1b4ae4e0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2c58dcb1, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7b7683d4, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5fcfca62, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5bb51241, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@352c308], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; false, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@7e0bcdeb]; rollback [true]
+2023-09-30 00:21:57.296  WARN 24880 --- [o-auto-1-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-09-30 00:21:57.303  INFO 24880 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@130419 testClass = CitaControllerTest, testInstance = com.reserva.citas.integracion.CitaControllerTest@5d9ca030, testMethod = Dado_un_id_Cuando_invoca_obtenercita_Entonces_retorna_una_cita@CitaControllerTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@694fdebe testClass = CitaControllerTest, locations = '{}', classes = '{class com.reserva.citas.CitasApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@1b4ae4e0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2c58dcb1, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7b7683d4, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5fcfca62, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5bb51241, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@352c308], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; false, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.2.1</a> at 30 sep. 2023 00:21:58</p>
+</div>
+</div>
+</body>
+</html>
