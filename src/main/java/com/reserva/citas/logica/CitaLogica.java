@@ -26,10 +26,10 @@ public class CitaLogica {
         }
         Cita cita = new Cita();
         cita.setIdCita(citaDTO.getIdCita());
-        //cita.setFechaReserva(LocalTime.parse(citaDTO.getFechaReserva()));
         cita.setFechaReserva(Time.valueOf(citaDTO.getFechaReserva()));
         cita.setCliente(citaDTO.getCliente());
         cita.setIdEmpresa(citaDTO.getIdEmpresa());
+        cita.setEstado(true);
         citaRepository.save(cita);
         return cita;
     }
@@ -39,7 +39,17 @@ public class CitaLogica {
     }
 
     public void cancelarCitaPorId(int id) {
+        Optional<Cita> cita = citaRepository.findById(id);
         citaRepository.deleteById(id);
+        if(cita.isPresent()) {
+            Cita mod = cita.get();
+            mod.setEstado(false);
+            citaRepository.save(mod);
+        }
+        else
+        {
+            throw new IllegalArgumentException("No existe esta cita");
+        }
     }
 
     private boolean fechaOcupada(CitaDTO citaDTO) {

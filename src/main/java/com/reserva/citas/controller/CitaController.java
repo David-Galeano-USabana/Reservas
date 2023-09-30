@@ -39,8 +39,8 @@ public class CitaController {
         }
     }
 
-    @DeleteMapping(path = "/citas/cancelar/{idCita}")
-    public RespuestaDTO borrarCita(@PathVariable int idCita) {
+    @PutMapping(path = "/citas/cancelar/{idCita}")
+    public RespuestaDTO cancelarCita(@PathVariable int idCita) {
         citaLogica.cancelarCitaPorId(idCita);
         return new RespuestaDTO("Cita cancelada correctamente");
     }

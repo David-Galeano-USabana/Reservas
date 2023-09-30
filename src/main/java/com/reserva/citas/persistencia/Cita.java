@@ -12,7 +12,8 @@ import java.sql.Time;
 
 @Entity
 @Table(name = "Citas")
-public @Data class Cita {
+public @Data
+class Cita {
 
     @Id
     @Column(name = "idcita")
@@ -26,6 +27,8 @@ public @Data class Cita {
     @Column(name = "cliente")
     private String cliente;
 
+    @Column(name = "estado")
+    private boolean estado;
 
 
 }
