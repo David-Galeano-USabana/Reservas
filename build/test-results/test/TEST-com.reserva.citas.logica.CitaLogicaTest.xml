@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.reserva.citas.logica.CitaLogicaTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-09-30T05:21:57" hostname="CPU-DE-SEBAS" time="0.203">
+<testsuite name="com.reserva.citas.logica.CitaLogicaTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-10-27T17:27:09" hostname="LAPTOP-8ANB9GAJ" time="0.632">
   <properties/>
-  <testcase name="Given_a_cita_When_invoke_obtenerreservaporid_Then_return_true()" classname="com.reserva.citas.logica.CitaLogicaTest" time="0.199"/>
-  <testcase name="Given_a_cita_When_invoke_crearcita_Then_return_true()" classname="com.reserva.citas.logica.CitaLogicaTest" time="0.003"/>
+  <testcase name="Given_a_cita_When_invoke_obtenerreservaporid_Then_return_true()" classname="com.reserva.citas.logica.CitaLogicaTest" time="0.624"/>
+  <testcase name="Given_a_cita_When_invoke_crearcita_Then_return_true()" classname="com.reserva.citas.logica.CitaLogicaTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
