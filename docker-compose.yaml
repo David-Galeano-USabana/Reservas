@@ -1,0 +1,21 @@
+services:
+  spring-boot-app:
+    build:
+      context: ./build/libs
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/reserveDatabase
+      SPRING_DATASOURCE_USERNAME: System.getenv('ACCESS_USER')
+      SPRING_DATASOURCE_PASSWORD: System.getenv('ACCESS_PASS')
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: reserveDatabase
+      MYSQL_USER: System.getenv('ACCESS_USER')
+      MYSQL_PASSWORD: System.getenv('ACCESS_PASS')
