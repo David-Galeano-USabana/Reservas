@@ -40,9 +40,14 @@ public class CitaLogica {
 
     public void cancelarCitaPorId(int id) {
         Optional<Cita> cita = citaRepository.findById(id);
-        Cita mod = cita.get();
-        mod.setEstado(false);
-        citaRepository.save(mod);
+        if(cita.isPresent()) {
+            Cita mod = cita.get();
+            mod.setEstado(false);
+            citaRepository.save(mod);
+        }
+        else{
+            throw new IllegalArgumentException("No existe tal cita");
+        }
     }
 
     private boolean fechaOcupada(CitaDTO citaDTO) {
