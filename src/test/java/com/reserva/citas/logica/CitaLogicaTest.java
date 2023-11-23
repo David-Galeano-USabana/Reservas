@@ -2,7 +2,7 @@ package com.reserva.citas.logica;
 
 import com.reserva.citas.controller.dto.CitaDTO;
 import com.reserva.citas.persistencia.Cita;
-import com.reserva.citas.persistencia.repository.CitaRepository;
+import com.reserva.citas.persistencia.CitaRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
