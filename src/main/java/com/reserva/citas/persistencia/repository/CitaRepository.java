@@ -1,8 +1,7 @@
-package com.reserva.citas.persistencia;
+package com.reserva.citas.persistencia.repository;
 
+import com.reserva.citas.persistencia.Cita;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Optional;
 
 public interface CitaRepository extends JpaRepository<Cita, Integer> {
 }

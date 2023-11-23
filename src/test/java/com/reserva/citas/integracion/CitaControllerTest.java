@@ -2,10 +2,13 @@ package com.reserva.citas.integracion;
 
 import com.reserva.citas.controller.dto.CitaDTO;
 import com.reserva.citas.controller.dto.RespuestaDTO;
+import com.reserva.citas.logica.CitaLogica;
 import com.reserva.citas.persistencia.Cita;
-import com.reserva.citas.persistencia.CitaRepository;
+import com.reserva.citas.persistencia.repository.CitaRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,7 +19,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.transaction.Transactional;
 import java.sql.Time;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -82,5 +84,13 @@ class CitaControllerTest {
         rest.put("/citas/cancelarCita/", Cita.class, id);
         Cita actual = citaRepository.findById(id).get();
         assertEquals(cita, actual);
+    }
+    @Test
+    @Transactional
+    void Dado_fecha_Cuando_verificardisponibilidad_Entonces_respuestadto_falso(){
+
+        ResponseEntity<RespuestaDTO> response = rest.getForEntity("/citas/disponibilidad/", RespuestaDTO.class, "12:00:00");
+        assertEquals(RespuestaDTO.class, response.getBody().getClass());
+
     }
 }

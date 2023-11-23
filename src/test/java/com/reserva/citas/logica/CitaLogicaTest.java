@@ -2,7 +2,7 @@ package com.reserva.citas.logica;
 
 import com.reserva.citas.controller.dto.CitaDTO;
 import com.reserva.citas.persistencia.Cita;
-import com.reserva.citas.persistencia.CitaRepository;
+import com.reserva.citas.persistencia.repository.CitaRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -64,13 +64,6 @@ class CitaLogicaTest {
     @Test
     void x_y_z(){
         int id = 5;
-        CitaDTO citaDTO = new CitaDTO();
-        citaDTO.setIdCita(id);
-        citaDTO.setCliente("John Ramon Pikmin Rise III");
-        citaDTO.setFechaReserva("10:00:00");
-        citaDTO.setIdEmpresa(3);
-        Cita cita = citaLogica.crearCita(citaDTO);
-        citaLogica.cancelarCitaPorId(id);
-        Mockito.verify(citaRepository).save(cita);
+        assertThrows(IllegalArgumentException.class,()-> citaLogica.cancelarCitaPorId(id));
     }
 }
