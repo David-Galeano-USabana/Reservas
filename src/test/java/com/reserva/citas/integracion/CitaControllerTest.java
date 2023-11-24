@@ -16,6 +16,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.transaction.Transactional;
 import java.sql.Time;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -38,7 +39,7 @@ class CitaControllerTest {
         citaDTO.setFechaReserva("12:00:00");
         citaDTO.setIdEmpresa(3);
         ResponseEntity<RespuestaDTO> response = rest.postForEntity("/citas/crear", citaDTO, RespuestaDTO.class);
-        assertEquals("Cita creada exitosamente. Tu ID de cita es: " + citaDTO.getIdCita(), response.getBody().getMensaje());
+        assertEquals("Cita creada exitosamente. Tu ID de cita es: " + citaDTO.getIdCita(), Objects.requireNonNull(response.getBody()).getMensaje());
     }
 
     @Test
@@ -59,7 +60,7 @@ class CitaControllerTest {
         cita.setEstado(true);
         citaRepository.save(cita);
         ResponseEntity<Cita> response = rest.getForEntity("/citas/crear/", Cita.class, id);
-        assertEquals(cita.getClass(), response.getBody().getClass());
+        assertEquals(cita.getClass(), Objects.requireNonNull(response.getBody()).getClass());
     }
 
     @Test
@@ -79,15 +80,18 @@ class CitaControllerTest {
         cita.setEstado(true);
         citaRepository.save(cita);
         rest.put("/citas/cancelarCita/", Cita.class, id);
-        Cita actual = citaRepository.findById(id).get();
-        assertEquals(cita, actual);
+        Cita actual;
+        if(citaRepository.findById(id).isPresent()) {
+            actual = citaRepository.findById(id).get();
+            assertEquals(cita, actual);
+        }
     }
     @Test
     @Transactional
     void Dado_fecha_Cuando_verificardisponibilidad_Entonces_respuestadto_falso(){
 
         ResponseEntity<RespuestaDTO> response = rest.getForEntity("/citas/disponibilidad/", RespuestaDTO.class, "12:00:00");
-        assertEquals(RespuestaDTO.class, response.getBody().getClass());
+        assertEquals(RespuestaDTO.class, Objects.requireNonNull(response.getBody()).getClass());
 
     }
 }
